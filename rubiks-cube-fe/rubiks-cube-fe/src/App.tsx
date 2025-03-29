@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Cube, { CubeProps } from "./components/Cube";
+import { Colour, SideLabel } from "./utilities/enums";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const sides: CubeProps["sides"] = [
+    {
+      label: SideLabel.Front,
+      colours: [
+        [Colour.Green, Colour.Green, Colour.Green],
+        [Colour.Green, Colour.Green, Colour.Green],
+        [Colour.Green, Colour.Green, Colour.Green],
+      ],
+    },
+    {
+      label: SideLabel.Top,
+      colours: [
+        [Colour.White, Colour.White, Colour.White],
+        [Colour.White, Colour.White, Colour.White],
+        [Colour.White, Colour.White, Colour.White],
+      ],
+    },
+    {
+      label: SideLabel.Left,
+      colours: [
+        [Colour.Orange, Colour.Orange, Colour.Orange],
+        [Colour.Orange, Colour.Orange, Colour.Orange],
+        [Colour.Orange, Colour.Orange, Colour.Orange],
+      ],
+    },
+    {
+      label: SideLabel.Right,
+      colours: [
+        [Colour.Red, Colour.Red, Colour.Red],
+        [Colour.Red, Colour.Red, Colour.Red],
+        [Colour.Red, Colour.Red, Colour.Red],
+      ],
+    },
+    {
+      label: SideLabel.Back,
+      colours: [
+        [Colour.Blue, Colour.Blue, Colour.Blue],
+        [Colour.Blue, Colour.Blue, Colour.Blue],
+        [Colour.Blue, Colour.Blue, Colour.Blue],
+      ],
+    },
+    {
+      label: SideLabel.Bottom,
+      colours: [
+        [Colour.Yellow, Colour.Yellow, Colour.Yellow],
+        [Colour.Yellow, Colour.Yellow, Colour.Yellow],
+        [Colour.Yellow, Colour.Yellow, Colour.Yellow],
+      ],
+    },
+  ];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>Rubik's Cube</h1>
+      <Cube sides={sides} />
+    </div>
+  );
 }
 
-export default App
+export default App;
