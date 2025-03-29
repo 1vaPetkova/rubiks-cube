@@ -1,8 +1,8 @@
-import { Colour, SideLabel } from "../utilities/enums";
+import { Colour, SideFace } from "../utilities/types";
 import Tile from "./Tile";
 
 export interface SideProps {
-  label: SideLabel;
+  face: SideFace;
   colours: [
     [Colour, Colour, Colour],
     [Colour, Colour, Colour],
@@ -10,14 +10,14 @@ export interface SideProps {
   ];
 }
 
-const Side = ({ label, colours }: SideProps) => {
+const Side = ({ face: type, colours }: SideProps) => {
   return (
-    <div className="">
-      <div className="underline">{label}</div>
-      {colours.map((line) => (
-        <div className="flex">
-          {line.map((tileColour) => (
-            <Tile colour={tileColour} />
+    <div>
+      <div className="underline">{type}</div>
+      {colours.map((line, lineIndex) => (
+        <div key={lineIndex} className="flex">
+          {line.map((tileColour, tileIndex) => (
+            <Tile key={`${lineIndex}_${tileIndex}`} colour={tileColour} />
           ))}
         </div>
       ))}

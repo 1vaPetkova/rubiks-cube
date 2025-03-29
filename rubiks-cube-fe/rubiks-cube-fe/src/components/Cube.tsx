@@ -1,15 +1,16 @@
-import Side, { SideProps } from "./Side";
+import { CubeType } from "../utilities/types";
+import Side from "./Side";
 
-export interface CubeProps {
-  sides: [SideProps, SideProps, SideProps, SideProps, SideProps, SideProps];
-}
+export type CubeProps = {
+  cubeProp: CubeType;
+};
 
-const Cube = ({ sides }: CubeProps) => {
+const Cube = ({ cubeProp }: CubeProps) => {
   return (
     <div className="flex gap-2">
-      {sides.map((side) => (
-        <div className="flex">
-          <Side label={side.label} colours={side.colours} />
+      {cubeProp.sides.map((side, index) => (
+        <div key={index} className="flex">
+          <Side face={side.face} colours={side.colours} />
         </div>
       ))}
     </div>

@@ -1,65 +1,78 @@
+import { useState } from "react";
 import "./App.css";
-import Cube, { CubeProps } from "./components/Cube";
-import { Colour, SideLabel } from "./utilities/enums";
+import Cube from "./components/Cube";
+import { CubeType, Direction } from "./utilities/types";
+import Rotations from "./components/Rotations";
+import { rotateSide } from "./service/RotationService";
 
 function App() {
-  const sides: CubeProps["sides"] = [
-    {
-      label: SideLabel.Front,
-      colours: [
-        [Colour.Green, Colour.Green, Colour.Green],
-        [Colour.Green, Colour.Green, Colour.Green],
-        [Colour.Green, Colour.Green, Colour.Green],
-      ],
-    },
-    {
-      label: SideLabel.Top,
-      colours: [
-        [Colour.White, Colour.White, Colour.White],
-        [Colour.White, Colour.White, Colour.White],
-        [Colour.White, Colour.White, Colour.White],
-      ],
-    },
-    {
-      label: SideLabel.Left,
-      colours: [
-        [Colour.Orange, Colour.Orange, Colour.Orange],
-        [Colour.Orange, Colour.Orange, Colour.Orange],
-        [Colour.Orange, Colour.Orange, Colour.Orange],
-      ],
-    },
-    {
-      label: SideLabel.Right,
-      colours: [
-        [Colour.Red, Colour.Red, Colour.Red],
-        [Colour.Red, Colour.Red, Colour.Red],
-        [Colour.Red, Colour.Red, Colour.Red],
-      ],
-    },
-    {
-      label: SideLabel.Back,
-      colours: [
-        [Colour.Blue, Colour.Blue, Colour.Blue],
-        [Colour.Blue, Colour.Blue, Colour.Blue],
-        [Colour.Blue, Colour.Blue, Colour.Blue],
-      ],
-    },
-    {
-      label: SideLabel.Bottom,
-      colours: [
-        [Colour.Yellow, Colour.Yellow, Colour.Yellow],
-        [Colour.Yellow, Colour.Yellow, Colour.Yellow],
-        [Colour.Yellow, Colour.Yellow, Colour.Yellow],
-      ],
-    },
-  ];
+  const [cube, setCube] = useState(initialState);
+
+  async function handleRotation(direction: Direction) {
+    const newCube = await rotateSide(cube, direction);
+    setCube(newCube);
+  }
 
   return (
-    <div>
+    <div className="">
       <h1>Rubik's Cube</h1>
-      <Cube sides={sides} />
+      <Cube cubeProp={cube} />
+      <Rotations rotate={handleRotation} />
     </div>
   );
 }
 
 export default App;
+
+const initialState: CubeType = {
+  sides: [
+    {
+      face: "front",
+      colours: [
+        ["green", "green", "green"],
+        ["green", "green", "green"],
+        ["green", "green", "green"],
+      ],
+    },
+    {
+      face: "top",
+      colours: [
+        ["white", "white", "white"],
+        ["white", "white", "white"],
+        ["white", "white", "white"],
+      ],
+    },
+    {
+      face: "left",
+      colours: [
+        ["orange", "orange", "orange"],
+        ["orange", "orange", "orange"],
+        ["orange", "orange", "orange"],
+      ],
+    },
+    {
+      face: "right",
+      colours: [
+        ["red", "red", "red"],
+        ["red", "red", "red"],
+        ["red", "red", "red"],
+      ],
+    },
+    {
+      face: "back",
+      colours: [
+        ["blue", "blue", "blue"],
+        ["blue", "blue", "blue"],
+        ["blue", "blue", "blue"],
+      ],
+    },
+    {
+      face: "bottom",
+      colours: [
+        ["yellow", "yellow", "yellow"],
+        ["yellow", "yellow", "yellow"],
+        ["yellow", "yellow", "yellow"],
+      ],
+    },
+  ],
+};

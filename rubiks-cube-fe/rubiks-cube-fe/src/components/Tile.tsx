@@ -1,13 +1,11 @@
 import { twMerge } from "tailwind-merge";
 
-import { Colour } from "../utilities/enums";
+import { Colour } from "../utilities/types";
 
-// Define the props interface
 interface TileProps {
   colour: Colour;
 }
 
-// Create the component using React.FC (functional component)
 const Tile = ({ colour }: TileProps) => {
   const twColour = ParseColour(colour);
   return (
@@ -19,17 +17,17 @@ export default Tile;
 
 function ParseColour(colour: Colour) {
   switch (colour) {
-    case Colour.White:
+    case "white":
       return "bg-white";
-    case Colour.Yellow:
+    case "yellow":
       return "bg-yellow-500";
-    case Colour.Blue:
+    case "blue":
       return "bg-blue-500";
-    case Colour.Green:
+    case "green":
       return "bg-green-500";
-    case Colour.Red:
+    case "red":
       return "bg-red-500";
-    case Colour.Orange:
+    case "orange":
       return "bg-orange-500";
   }
 }
