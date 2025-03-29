@@ -67,7 +67,7 @@ const initialState: CubeType = {
       ],
     },
     {
-      face: "bottom",
+      face: "down",
       colours: [
         ["yellow", "yellow", "yellow"],
         ["yellow", "yellow", "yellow"],

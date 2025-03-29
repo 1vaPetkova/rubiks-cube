@@ -2,44 +2,46 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace RubiksCube.Models;
-
-[JsonConverter(typeof(StringEnumConverter))]
-public enum Move
+namespace RubiksCube.Enums
 {
-    [EnumMember(Value = "F")]
-    F,
 
-    [EnumMember(Value = "F'")]
-    FPrime,
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum Move
+    {
+        [EnumMember(Value = "F")]
+        F,
 
-    [EnumMember(Value = "R")]
-    R,
+        [EnumMember(Value = "F'")]
+        FPrime,
 
-    [EnumMember(Value = "R'")]
-    RPrime,
+        [EnumMember(Value = "R")]
+        R,
 
-    [EnumMember(Value = "U")]
-    U,
+        [EnumMember(Value = "R'")]
+        RPrime,
 
-    [EnumMember(Value = "U'")]
-    UPrime,
+        [EnumMember(Value = "U")]
+        U,
 
-    [EnumMember(Value = "B")]
-    B,
+        [EnumMember(Value = "U'")]
+        UPrime,
 
-    [EnumMember(Value = "B'")]
-    BPrime,
+        [EnumMember(Value = "B")]
+        B,
 
-    [EnumMember(Value = "L")]
-    L,
+        [EnumMember(Value = "B'")]
+        BPrime,
 
-    [EnumMember(Value = "L'")]
-    LPrime,
+        [EnumMember(Value = "L")]
+        L,
 
-    [EnumMember(Value = "D")]
-    D,
+        [EnumMember(Value = "L'")]
+        LPrime,
 
-    [EnumMember(Value = "D'")]
-    DPrime
+        [EnumMember(Value = "D")]
+        D,
+
+        [EnumMember(Value = "D'")]
+        DPrime
+    }
 }

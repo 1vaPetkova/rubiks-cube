@@ -22,7 +22,7 @@ namespace RubiksCube.Enums
         [EnumMember(Value = "top")]
         Top,
 
-        [EnumMember(Value = "bottom")]
-        Bottom
+        [EnumMember(Value = "down")]
+        Down
     }
 }

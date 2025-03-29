@@ -1,12 +1,14 @@
 using Newtonsoft.Json;
+using RubiksCube.Enums;
 
-namespace RubiksCube.Models;
-
-public class CubeRotationModel
+namespace RubiksCube.Models
 {
-    [JsonProperty("cube")]
-    public required CubeModel Cube { get; set; }
+    public class CubeRotationModel
+    {
+        [JsonProperty("cube")]
+        public required CubeModel Cube { get; set; }
 
-    [JsonProperty("direction")]
-    public Move Direction { get; }
+        [JsonProperty("direction")]
+        public Move Direction { get; }
+    }
 }

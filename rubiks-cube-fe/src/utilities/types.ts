@@ -1,4 +1,4 @@
-export type SideFace = "front" | "back" | "left" | "right" | "top" | "bottom";
+export type SideFace = "front" | "back" | "left" | "right" | "top" | "down";
 
 export type Colour = "white" | "yellow" | "blue" | "green" | "red" | "orange";
 
