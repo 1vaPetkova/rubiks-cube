@@ -5,10 +5,10 @@ namespace RubiksCube.Models
     public class CubeModel
     {
         [JsonProperty("sides")]
-        public Side[] Sides { get; set; }
+        public SideModel[] Sides { get; set; }
     }
 
-    public class Side
+    public class SideModel
     {
         [JsonProperty("face")]
         public string Face { get; set; }
