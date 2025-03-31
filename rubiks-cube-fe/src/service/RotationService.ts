@@ -4,14 +4,6 @@ export const rotateSide = async (
   cube: CubeType,
   direction: Direction
 ): Promise<CubeType> => {
-  // const newSides = cube.sides.toReversed() as [
-  //   SideType,
-  //   SideType,
-  //   SideType,
-  //   SideType,
-  //   SideType,
-  //   SideType
-  // ];
   const payload = { cube, direction };
 
   const requestOptions: RequestInit = {
@@ -24,6 +16,7 @@ export const rotateSide = async (
     requestOptions
   ).then((response) => response.json());
 
+  console.log("result", result);
   return result;
 };
 

@@ -9,6 +9,6 @@ namespace RubiksCube.Models
         public required Cube Cube { get; set; }
 
         [JsonProperty("direction")]
-        public Move Direction { get; }
+        public Move Direction { get; set; }
     }
 }

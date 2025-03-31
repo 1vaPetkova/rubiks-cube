@@ -14,8 +14,8 @@ public class CubeController(ILogger<CubeController> logger) : ControllerBase
     public IActionResult Rotate([FromBody] CubeRequestModel model)
     {
         //  logger.LogInformation(JsonConvert.SerializeObject(model));
-        RotationService.Rotate(model, logger);
-        return Ok(model);
+        RotationService.Rotate(model);
+        return Ok(model.Cube);
     }
 
 }

@@ -19,14 +19,6 @@ export const DirectionsArray = [
 
 export type Direction = (typeof DirectionsArray)[number];
 
-// export type SideType = {
-//   face: SideFace;
-//   colours: [
-//     [Colour, Colour, Colour],
-//     [Colour, Colour, Colour],
-//     [Colour, Colour, Colour]
-//   ];
-// };
 export type SideType = [
   [Colour, Colour, Colour],
   [Colour, Colour, Colour],
@@ -34,41 +26,5 @@ export type SideType = [
 ];
 
 export type CubeType = {
-  // sides: [SideType, SideType, SideType, SideType, SideType, SideType];
   sides: Record<SideFace, SideType>;
-};
-
-const cubeS: CubeType = {
-  sides: {
-    front: [
-      ["red", "red", "red"],
-      ["red", "red", "red"],
-      ["red", "red", "red"],
-    ],
-    back: [
-      ["orange", "orange", "orange"],
-      ["orange", "orange", "orange"],
-      ["orange", "orange", "orange"],
-    ],
-    left: [
-      ["blue", "blue", "blue"],
-      ["blue", "blue", "blue"],
-      ["blue", "blue", "blue"],
-    ],
-    right: [
-      ["green", "green", "green"],
-      ["green", "green", "green"],
-      ["green", "green", "green"],
-    ],
-    top: [
-      ["white", "white", "white"],
-      ["white", "white", "white"],
-      ["white", "white", "white"],
-    ],
-    down: [
-      ["yellow", "yellow", "yellow"],
-      ["yellow", "yellow", "yellow"],
-      ["yellow", "yellow", "yellow"],
-    ],
-  },
 };

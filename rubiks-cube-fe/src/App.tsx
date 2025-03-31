@@ -14,9 +14,9 @@ function App() {
   }
 
   return (
-    <div className="">
+    <div className="pl-10 mt-10">
       <h1>Rubik's Cube</h1>
-      <Cube cubeProp={cube} />
+      <Cube sides={cube.sides} />
       <Rotations rotate={handleRotation} />
     </div>
   );
@@ -26,20 +26,15 @@ export default App;
 
 const initialState: CubeType = {
   sides: {
-    front: [
-      ["green", "green", "green"],
-      ["green", "green", "green"],
-      ["green", "green", "green"],
-    ],
-    top: [
-      ["white", "white", "white"],
-      ["white", "white", "white"],
-      ["white", "white", "white"],
-    ],
     left: [
       ["orange", "orange", "orange"],
       ["orange", "orange", "orange"],
       ["orange", "orange", "orange"],
+    ],
+    front: [
+      ["green", "green", "green"],
+      ["green", "green", "green"],
+      ["green", "green", "green"],
     ],
     right: [
       ["red", "red", "red"],
@@ -50,6 +45,11 @@ const initialState: CubeType = {
       ["blue", "blue", "blue"],
       ["blue", "blue", "blue"],
       ["blue", "blue", "blue"],
+    ],
+    top: [
+      ["white", "white", "white"],
+      ["white", "white", "white"],
+      ["white", "white", "white"],
     ],
     down: [
       ["yellow", "yellow", "yellow"],
