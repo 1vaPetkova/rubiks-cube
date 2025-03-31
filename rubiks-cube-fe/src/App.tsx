@@ -25,54 +25,36 @@ function App() {
 export default App;
 
 const initialState: CubeType = {
-  sides: [
-    {
-      face: "front",
-      colours: [
-        ["green", "green", "green"],
-        ["green", "green", "green"],
-        ["green", "green", "green"],
-      ],
-    },
-    {
-      face: "top",
-      colours: [
-        ["white", "white", "white"],
-        ["white", "white", "white"],
-        ["white", "white", "white"],
-      ],
-    },
-    {
-      face: "left",
-      colours: [
-        ["orange", "orange", "orange"],
-        ["orange", "orange", "orange"],
-        ["orange", "orange", "orange"],
-      ],
-    },
-    {
-      face: "right",
-      colours: [
-        ["red", "red", "red"],
-        ["red", "red", "red"],
-        ["red", "red", "red"],
-      ],
-    },
-    {
-      face: "back",
-      colours: [
-        ["blue", "blue", "blue"],
-        ["blue", "blue", "blue"],
-        ["blue", "blue", "blue"],
-      ],
-    },
-    {
-      face: "down",
-      colours: [
-        ["yellow", "yellow", "yellow"],
-        ["yellow", "yellow", "yellow"],
-        ["yellow", "yellow", "yellow"],
-      ],
-    },
-  ],
+  sides: {
+    front: [
+      ["green", "green", "green"],
+      ["green", "green", "green"],
+      ["green", "green", "green"],
+    ],
+    top: [
+      ["white", "white", "white"],
+      ["white", "white", "white"],
+      ["white", "white", "white"],
+    ],
+    left: [
+      ["orange", "orange", "orange"],
+      ["orange", "orange", "orange"],
+      ["orange", "orange", "orange"],
+    ],
+    right: [
+      ["red", "red", "red"],
+      ["red", "red", "red"],
+      ["red", "red", "red"],
+    ],
+    back: [
+      ["blue", "blue", "blue"],
+      ["blue", "blue", "blue"],
+      ["blue", "blue", "blue"],
+    ],
+    down: [
+      ["yellow", "yellow", "yellow"],
+      ["yellow", "yellow", "yellow"],
+      ["yellow", "yellow", "yellow"],
+    ],
+  },
 };

@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Launch",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/net9.0/linux-x64/RubiksCube",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "DOTNET_ROOT": "/usr/share/dotnet"
+      },
+      "console": "integratedTerminal"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ using Newtonsoft.Json.Converters;
 namespace RubiksCube.Enums
 {
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum SideFace
+    public enum Face
     {
         [EnumMember(Value = "front")]
         Front,

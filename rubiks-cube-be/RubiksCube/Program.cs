@@ -1,6 +1,8 @@
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services
+.AddControllers()
+.AddNewtonsoftJson();
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policyBuilder =>
@@ -15,7 +17,6 @@ builder.Services.AddCors(options =>
 WebApplication app = builder.Build();
 
 app.UseCors();
-app.UseStaticFiles();
 
 app.UseRouting();
 

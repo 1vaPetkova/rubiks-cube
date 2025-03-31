@@ -3,10 +3,10 @@ using RubiksCube.Enums;
 
 namespace RubiksCube.Models
 {
-    public class CubeRotationModel
+    public class CubeRequestModel
     {
         [JsonProperty("cube")]
-        public required CubeModel Cube { get; set; }
+        public required Cube Cube { get; set; }
 
         [JsonProperty("direction")]
         public Move Direction { get; }
