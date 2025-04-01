@@ -12,7 +12,7 @@ const Button = ({ dir, rotate }: ButtonProps) => {
 
   return (
     <button
-      className="w-10 h-10 bg-amber-400 border-2 border-amber-400 hover:bg-blue-400 rounded-lg"
+      className="w-10 h-10 bg-amber-400 border-amber-600 hover:bg-amber-600 rounded-lg"
       onClick={handleRotation}
     >
       {dir}

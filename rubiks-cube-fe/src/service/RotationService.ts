@@ -19,12 +19,3 @@ export const rotateSide = async (
   console.log("result", result);
   return result;
 };
-
-interface RequestPayload {
-  method: string;
-  url: string;
-  headers: {
-    "Content-Type": string;
-  };
-  body: string;
-}

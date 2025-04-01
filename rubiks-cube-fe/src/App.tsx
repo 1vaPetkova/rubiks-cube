@@ -4,6 +4,7 @@ import Cube from "./components/Cube";
 import { CubeType, Direction } from "./utilities/types";
 import Rotations from "./components/Rotations";
 import { rotateSide } from "./service/RotationService";
+import ResetButton from "./components/ResetButton";
 
 function App() {
   const [cube, setCube] = useState(initialState);
@@ -13,11 +14,19 @@ function App() {
     setCube(newCube);
   }
 
+  function handleReset() {
+    setCube(initialState);
+  }
   return (
     <div className="pl-10 mt-10">
-      <h1>Rubik's Cube</h1>
-      <Cube sides={cube.sides} />
-      <Rotations rotate={handleRotation} />
+      <h1 className="text-3xl font-bold font-sans text-indigo-800">
+        Rubik's Cube
+      </h1>
+      <div>
+        <Cube sides={cube.sides} />
+        <Rotations rotate={handleRotation} />
+        <ResetButton reset={handleReset} />
+      </div>
     </div>
   );
 }
