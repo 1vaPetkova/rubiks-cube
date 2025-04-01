@@ -19,9 +19,7 @@ function App() {
   }
   return (
     <div className="pl-10 mt-10">
-      <h1 className="text-3xl font-bold font-sans text-indigo-800">
-        Rubik's Cube
-      </h1>
+      <h1 className="text-3xl font-bold font-sans text-black">Rubik's Cube</h1>
       <div>
         <Cube sides={cube.sides} />
         <Rotations rotate={handleRotation} />
