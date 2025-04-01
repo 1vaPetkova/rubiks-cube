@@ -7,7 +7,7 @@ namespace RubiksCube.Services
 {
     public static class RotationService
     {
-        public static void Rotate(CubeRequestModel model)
+        public static void Rotate(CubeRotationModel model)
         {
             var cube = model.Cube;
             Dictionary<Face, Colour[][]> sides = cube.Sides;

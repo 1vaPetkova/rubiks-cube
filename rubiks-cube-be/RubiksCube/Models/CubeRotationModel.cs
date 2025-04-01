@@ -3,7 +3,7 @@ using RubiksCube.Enums;
 
 namespace RubiksCube.Models
 {
-    public class CubeRequestModel
+    public class CubeRotationModel
     {
         [JsonProperty("cube")]
         public required Cube Cube { get; set; }

@@ -9,7 +9,7 @@ public class CubeController() : ControllerBase
 {
 
     [HttpPost("rotate")]
-    public IActionResult Rotate([FromBody] CubeRequestModel model)
+    public IActionResult Rotate([FromBody] CubeRotationModel model)
     {
         RotationService.Rotate(model);
         return Ok(model.Cube);
